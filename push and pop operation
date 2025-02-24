@@ -1,0 +1,38 @@
+//push and pop operation
+#include <stdio.h>
+#define size 10
+int arr[size];
+void push(int n);
+void pop();
+int top = -1;
+int main(){
+    push(3);
+    push(10);
+    push(50);
+    push(70);
+    pop();
+    pop();
+    for(int i = 0; i<=top; i++){
+        printf("%d ", arr[i]);
+    }
+    return 0;
+}
+void push(int n){
+    if(top == size -1){
+        printf("Error\n");
+    }
+    else{
+        top = top +1;
+        arr[top] = n;
+    }
+    
+}
+void pop(){
+    if(top == -1){
+        printf("Error\n");
+    }
+    else{
+        arr[top] = 0;
+        top = top -1;
+    }
+}
